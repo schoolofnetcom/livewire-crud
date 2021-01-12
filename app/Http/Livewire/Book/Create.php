@@ -18,7 +18,18 @@ class Create extends Component
         $this->book = new Book();
     }
 
+    // public function updatedBookName() {
+    //     $this->validate();
+    // }
+
+    // public function updated($field) {
+    //     if($field == 'book.name') {
+    //         $this->validate();
+    //     }
+    // }
+
     public function save() {
+        $this->validate();
         Book::create($this->book->toArray());
         return redirect()->route('books.index');
     }
