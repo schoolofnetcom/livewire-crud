@@ -8,6 +8,8 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
+
+    Route::resource('books', App\Http\Controllers\BookController::class);
 });
 
 require __DIR__.'/auth.php';
