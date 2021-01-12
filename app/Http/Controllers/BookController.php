@@ -9,6 +9,10 @@ class BookController extends Controller
 {
     public function index()
     {
+        // $books = Book::all();
+        // $books = Book::paginate();
+        // return view('book.index', ["books" => $books]);
+        // return view('book.index', compact('books'));
         return view('book.index');
     }
 
