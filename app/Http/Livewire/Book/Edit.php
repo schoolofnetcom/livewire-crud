@@ -21,6 +21,7 @@ class Edit extends Component
     public function save() {
         $this->validate();
         $this->book->update($this->book->toArray());
+        session()->flash('message', 'Livro atualizado com sucesso');
         return redirect()->route('books.index');
     }
 

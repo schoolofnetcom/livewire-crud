@@ -31,6 +31,7 @@ class Create extends Component
     public function save() {
         $this->validate();
         Book::create($this->book->toArray());
+        session()->flash('message', 'Livro cadastrado com sucesso');
         return redirect()->route('books.index');
     }
 
