@@ -23,7 +23,7 @@
                 </thead>
                 <tbody class="bg-white">
                     @forelse($books as $book)
-                    <tr>
+                    <tr wire:key="{{ $book->id }}">
                         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                             {{ $book->id }}
                         </td>
@@ -43,7 +43,11 @@
                         </td>
                     </tr>
                     @empty
-                        <p>Nenhum item encontrado...</p>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                Nenhum item encontrado ...
+                            </td>
+                        </tr>
                     @endforelse
                 </tbody>
             </table>
